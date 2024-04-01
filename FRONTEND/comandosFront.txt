@@ -1,0 +1,12 @@
+npm i react-router-dom bootswatch
+npm audit fix
+npm list react-router-dom
+npm install react-router-dom
+npm audit fix --force
+npm audit
+npm start
+
+docker-compose run --rm app npx create-react-app react-app --use-npm
+cd .\react-app\
+mv ..\docker-compose.yml .
+docker-compose up

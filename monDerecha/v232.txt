@@ -1,0 +1,12 @@
+rs.initiate({
+  _id: "my-replica-set",
+  members: [
+    { _id: 0, host: "mongo-primary:27017" },
+    { _id: 1, host: "mongo-secondary:27017" },
+    { _id: 2, host: "mongo-secondary2:27017" }
+  ]
+})
+rs.status()
+my-replica-set [direct: secondary] test> db.getMongo().setReadPref('secondary')
+my-replica-set [direct: secondary] test> db.test.find()
+

@@ -1,0 +1,44 @@
+version: '3'
+services:
+  mongo-primary:
+    image: mongo
+    command: mongod --replSet my-replica-set
+    ports:
+      - 27017:27017
+    networks:
+      - mongo-network
+    deploy:
+      resources:
+        limits:
+          cpus: '0.5'
+          memory: 100M
+
+  mongo-secondary:
+    image: mongo
+    command: mongod --replSet my-replica-set
+    ports:
+      - 27020:27017
+    networks:
+      - mongo-network
+    deploy:
+      resources:
+        limits:
+          cpus: '0.5'
+          memory: 100M
+
+  mongo-secondary2:
+    image: mongo
+    command: mongod --replSet my-replica-set
+    ports:
+      - 27021:27017
+    networks:
+      - mongo-network
+    deploy:
+      resources:
+        limits:
+          cpus: '0.5'
+          memory: 100M
+
+networks:
+  mongo-network:
+    name: mongo-cluster
