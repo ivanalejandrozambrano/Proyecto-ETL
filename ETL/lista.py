@@ -3,9 +3,10 @@ from firebase_admin import credentials
 from firebase_admin import db
 
 # Inicializar la aplicación de Firebase
-cred = credentials.Certificate('modelado-810a4-firebase-adminsdk-n75i9-3d6007cd51.json')
+cred = credentials.Certificate(
+    'modelado-810a4-firebase-adminsdk-n75i9-3d6007cd51.json')
 firebase_admin.initialize_app(cred, {
-    'databaseURL': 'https://modelado-810a4-default-rtdb.firebaseio.com'
+    'databaseURL': '*********'
 })
 
 # Obtén una referencia a la ubicación donde deseas insertar los datos
